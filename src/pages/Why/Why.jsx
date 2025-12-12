@@ -1,5 +1,4 @@
 import { Box } from '@mui/material'
-import React from 'react'
 import Banner from '../../components/organisms/Banner'
 import IMG1 from '../../assets/istockphoto-1752520492-2048x2048.jpg'
 import FlipCard from '../../components/organisms/FlipCard'

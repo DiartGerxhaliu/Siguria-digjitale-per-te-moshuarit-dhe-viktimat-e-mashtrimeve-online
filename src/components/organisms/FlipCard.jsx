@@ -60,6 +60,7 @@ function FlipCard({ frontText, backText }) {
             boxShadow: "0 4px 10px rgba(0,0,0,0.2)"
           }}
         >
+          {}
           <p>{backText}</p>
         </Box>
       </Box>

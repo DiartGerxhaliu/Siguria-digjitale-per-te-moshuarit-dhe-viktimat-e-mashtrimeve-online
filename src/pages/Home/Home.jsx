@@ -10,8 +10,10 @@ export default function Home() {
 
   let [banner, setBanner]= useState(IMG1);
 
+  //kartat krejt ne fund
   let cardsInfo = [
     {
+      //IMG1 eshte e importuar ne fillim t'faqes munesh me ja ndrru ama kopijo formatin
       image:IMG1,
       titull:"Ruani te mosuarit",
       paragraf: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea asperiores temporibus dicta officia, quibusdam cum laudantium tempore esse repellat eligendi, fuga vitae neque iure placeat! Iste optio quae doloremque maiores.'
@@ -29,6 +31,7 @@ export default function Home() {
   ]
  
   const interval = (g) => {
+    //qikjo e ndrron Imazhin e bannerit qato setBanner
     return setInterval(() => {
       if (g === IMG1) {
         setBanner(IMG2);
@@ -54,6 +57,10 @@ export default function Home() {
         fontFamily: 'Lato',
         width:'100%',
     }}>
+
+      {/* 
+      Qiky osht banneri
+      edhe titullin munum me ba mu ndrru nese doni */}
       
       <Banner 
         bannerIMG={banner}
@@ -72,6 +79,8 @@ export default function Home() {
           margin:'100px auto',
           padding:'100px'
         }}>
+
+          {/* Qiky osht qaj seksioni i zi*/}
           <Box sx={{height:'100%', width:'40%'}}>
             <h1>Cfare duam ne te arrijme</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rerum mollitia animi asperiores excepturi itaque, fugit hic provident, vero sequi placeat omnis modi quam, est necessitatibus atque recusandae quae consequuntur.</p>
