@@ -11,7 +11,8 @@ a{
 }
 a:hover{
   transition: 1s;
-  background-color: red;
+  background-color: rgb(0, 91, 201);
+  color: white;
 }
 
 .footer a{

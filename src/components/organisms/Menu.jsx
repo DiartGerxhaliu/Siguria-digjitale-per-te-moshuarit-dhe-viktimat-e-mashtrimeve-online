@@ -17,7 +17,9 @@ function Menu() {
         top:'0',
         width: '100%',
         backgroundColor: 'white',
-        zIndex:10
+        zIndex:10,
+        paddingBottom: '20px',
+        paddingTop: '10px'
         }}>
       <Box className="logo"
       sx={{
@@ -26,7 +28,7 @@ function Menu() {
         padding: 'auto',
         margin: 'auto'
       }}>
-        <h1><span>Siguia Digjitale</span></h1>
+        <h1><span>Siguria Digjitale</span></h1>
       </Box>
       <Box className="nav"
       sx={{

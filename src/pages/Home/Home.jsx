@@ -15,18 +15,18 @@ export default function Home() {
     {
       //IMG1 eshte e importuar ne fillim t'faqes munesh me ja ndrru ama kopijo formatin
       image:IMG1,
-      titull:"Ruani te mosuarit",
-      paragraf: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea asperiores temporibus dicta officia, quibusdam cum laudantium tempore esse repellat eligendi, fuga vitae neque iure placeat! Iste optio quae doloremque maiores.'
+      titull:"Ruani të moshuarit",
+      paragraf: "Të moshuarit janë shpesh shënjestër e mashtrimeve online. Ndihmojini të dallojnë mesazhet e rreme, të mos japin të dhëna personale dhe t’i kontrollojnë gjithmonë burimet. Së bashku mund t’i mbajmë të sigurt."
     },
     {
       image:IMG2,
       titull:"Ruani veten",
-      paragraf:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea asperiores temporibus dicta officia, quibusdam cum laudantium tempore esse repellat eligendi, fuga vitae neque iure placeat! Iste optio quae doloremque maiores."
+      paragraf: 'Mbrojtja juaj në internet fillon nga ju. Përdorni fjalëkalime të forta, mos hapni linke të dyshimta dhe verifikoni gjithmonë burimin e informacioneve. Qëndroni vigjilent—siguria juaj është prioritet.'
     },
     {
       image:IMG3,
       titull:"Rreziku eshte gjithkund",
-      paragraf:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea asperiores temporibus dicta officia, quibusdam cum laudantium tempore esse repellat eligendi, fuga vitae neque iure placeat! Iste optio quae doloremque maiores."
+      paragraf:'Internetin e përdorim çdo ditë, por rreziqet fshihen kudo — nga mesazhet mashtruese deri te faqet e rreme. Qëndroni të kujdesshëm dhe kontrolloni çdo hap përpara se të ndani të dhënat tuaja. Siguria fillon me vëmendjen.'
     },
   ]
  
@@ -83,12 +83,11 @@ export default function Home() {
           {/* Qiky osht qaj seksioni i zi*/}
           <Box sx={{height:'100%', width:'40%'}}>
             <h1>Cfare duam ne te arrijme</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rerum mollitia animi asperiores excepturi itaque, fugit hic provident, vero sequi placeat omnis modi quam, est necessitatibus atque recusandae quae consequuntur.</p>
-            <ul>
-              <li>PIKA1</li>
-              <li>PIKA2</li>
-              <li>PIKA3</li>
-            </ul>
+            <p>Qëllimi i këtij website është një zgjidhje digjitale që adreson një nevojë të qartë shoqërore:
+               rritjen e sigurisë kibernetike te të moshuarit dhe te individët në përdorimin e teknologjisë.
+               Kjo kategori e popullsisë, shpesh përballet me mashtrime online, phishing,
+               abuzime financiare dhe rreziqe. Kjo është një platformë të qasshme, e thjeshtë dhe edukative, e cila
+               shërben si një mjet parandalues dhe shpjegues për situatat e rrezikshme.</p>
           </Box>
           <Box
           sx={{position:'relative',
