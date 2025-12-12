@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 function Menu() {
+  
   return (
     
     <Box sx={{
@@ -41,6 +42,7 @@ function Menu() {
         <Link to={"/why"} >Perse</Link>
         <Link to={"/about"} >Rreth nesh</Link>
         <Link to={"/contact"} >Kontakti</Link>
+        <Link to={"/is-this-a-scam"}>A eshte mashtrim</Link>
       </Box>
 
     </Box>
