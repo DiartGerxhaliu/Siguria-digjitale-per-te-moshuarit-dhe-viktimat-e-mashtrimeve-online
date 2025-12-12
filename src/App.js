@@ -6,6 +6,8 @@ import Footer from './components/organisms/Footer';
 import Why from './pages/Why/Why';
 import AboutUs from './pages/AboutUs/AboutUs';
 import Contact from './pages/Contact/Contact';
+import Scam from './pages/Scam/Scam';
+import Terms from './pages/Scam/Terms';
 
 
 
@@ -22,6 +24,8 @@ function App() {
           <Route path='/why' element={<Why/>}/>
           <Route path='/about' element={<AboutUs/>}/>
           <Route path='/contact' element={<Contact/>}/>
+          <Route path='/is-this-a-scam' element={<Scam/>}/>
+          <Route path='/terms' element={<Terms/>}/>
           
         </Routes>
         <Footer/>
