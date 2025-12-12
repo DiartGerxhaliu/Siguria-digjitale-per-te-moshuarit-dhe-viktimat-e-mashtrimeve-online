@@ -26,7 +26,7 @@ export default function Home() {
     {
       image:IMG3,
       titull:"Rreziku eshte gjithkund",
-      paragraf:'Internetin e përdorim çdo ditë, por rreziqet fshihen kudo — nga mesazhet mashtruese deri te faqet e rreme. Qëndroni të kujdesshëm dhe kontrolloni çdo hap përpara se të ndani të dhënat tuaja. Siguria fillon me vëmendjen.'
+      paragraf:'Internetin e përdorim çdo ditë, por rreziqet fshihen kudo, nga mesazhet mashtruese deri te faqet e rreme. Qëndroni të kujdesshëm dhe kontrolloni çdo hap përpara se të ndani të dhënat tuaja. Siguria fillon me vëmendjen.'
     },
   ]
  
