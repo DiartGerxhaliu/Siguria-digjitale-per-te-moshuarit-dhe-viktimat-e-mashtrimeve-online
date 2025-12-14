@@ -7,7 +7,7 @@ function Why() {
         <Box>
             <Banner
             bannerIMG={IMG1}
-            titulli={"Prese po merremi me kete problem"}
+            titulli={"Përse po merremi me këtë problem?"}
             paragraph={" "}
             />
 
@@ -20,16 +20,16 @@ function Why() {
             }}>
 
                 <FlipCard
-                frontText={"Pershendetje"}
-                backText={"123123"}
+                frontText={"Rëndësia e ndërgjegjësimit"}
+                backText={"Të moshuarit shpesh janë viktima të mashtrimeve online sepse nuk janë të informuar mjaftueshëm për rreziqet. Edukimi i tyre ndihmon në parandalimin e humbjeve."}
                 />
                 <FlipCard
-                frontText={"Pershendetje"}
-                backText={"123123"}
+                frontText={"Rritja e sigurisë digjitale"}
+                backText={"Projekti ynë synon të tregojë mënyra praktike për të mbrojtur informacionin personal, fjalëkalimet dhe transaksionet bankare online."}
                 />
                 <FlipCard
-                frontText={"Pershendetje"}
-                backText={"123123"}
+                frontText={"Mbështetje për viktimat"}
+                backText={"Duke i informuar për rreziqet dhe duke ofruar udhëzime hap pas hapi, ata mund të reagojnë shpejt në rast mashtrimi dhe të kërkojnë ndihmë."}
                 />
 
             </Box>

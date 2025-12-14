@@ -12,6 +12,7 @@ function FlipCard({ frontText, backText }) {
         height: "45vh",
         perspective: "1000px",
         cursor: "pointer",
+        color: 'white'
       }}
     >
       <Box
@@ -36,7 +37,8 @@ function FlipCard({ frontText, backText }) {
             alignItems: "center",
             flexDirection:"column",
             borderRadius: "12px",
-            boxShadow: "0 4px 10px rgba(0,0,0,0.2)"
+            boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+            backgroundColor: 'rgb(0, 91, 201)'
             
           }}
         >
@@ -57,7 +59,7 @@ function FlipCard({ frontText, backText }) {
             justifyContent: "center",
             alignItems: "center",
             borderRadius: "12px",
-            boxShadow: "0 4px 10px rgba(0,0,0,0.2)"
+            boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
           }}
         >
           {}
