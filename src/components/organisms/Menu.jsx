@@ -19,7 +19,7 @@ function Menu() {
         width: '100%',
         backgroundColor: 'white',
         zIndex:10,
-        paddingBottom: '20px',
+        paddingBottom: '40px',
         paddingTop: '10px'
         }}>
       <Box className="logo"

@@ -69,7 +69,7 @@ function Scam() {
       >
         <CardContent>
           <Typography variant="h5" fontWeight="bold" gutterBottom>
-            A eshte mashtrim ky email?
+            A është mashtrim ky email?
           </Typography>
 
           <TextField

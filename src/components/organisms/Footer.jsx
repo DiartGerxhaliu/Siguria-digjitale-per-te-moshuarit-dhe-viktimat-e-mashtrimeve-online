@@ -30,8 +30,8 @@ function Footer() {
           color: 'white'
         }}>
         <Link to={"/"} >Ballina</Link>
-        <Link to={"/why"} >Perse</Link>
-        <Link to={"/about"} >Rreth nesh</Link>
+        <Link to={"/why"} >Përse</Link>
+        <Link to={"/about"} >Udhëzime</Link>
         <Link to={"/contact"} >Kontakti</Link></Breadcrumbs>
       </Box>
     </Box>
