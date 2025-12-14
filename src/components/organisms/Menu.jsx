@@ -41,10 +41,10 @@ function Menu() {
         margin: 'auto',
       }}>
         <Link to={"/"} >Ballina</Link>
-        <Link to={"/why"} >Perse</Link>
-        <Link to={"/about"} >Rreth nesh</Link>
+        <Link to={"/why"} >Përse</Link>
+        <Link to={"/about"} >Udhëzime</Link>
         <Link to={"/contact"} >Kontakti</Link>
-        <Link to={"/is-this-a-scam"}>A eshte mashtrim</Link>
+        <Link to={"/is-this-a-scam"}>A është mashtrim</Link>
       </Box>
 
     </Box>
