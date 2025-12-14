@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import OpenAI from "openai";
 import {
   Box,
@@ -11,6 +11,7 @@ import {
   Checkbox,
   FormControlLabel,
   Link,
+  Alert,
 } from "@mui/material";
 
 const client = new OpenAI({
@@ -18,33 +19,78 @@ const client = new OpenAI({
   dangerouslyAllowBrowser: true,
 });
 
+const REQUEST_COOLDOWN_MS = 8000; // 8 seconds
+
 function Scam() {
   const [text, setText] = useState("");
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
   const [accepted, setAccepted] = useState(false);
+  const [error, setError] = useState("");
+
+  const lastRequestTime = useRef(0);
+  const requestInFlight = useRef(false);
 
   const handleSend = async () => {
-    if (!accepted) return;            // User must accept terms
-    if (!text.trim()) return;
+    const now = Date.now();
 
+    if (!accepted || !text.trim()) return;
+
+    if (requestInFlight.current) {
+      setError("Ju lutem prisni, kërkesa është duke u përpunuar.");
+      return;
+    }
+
+    if (now - lastRequestTime.current < REQUEST_COOLDOWN_MS) {
+      setError("Ju lutem prisni disa sekonda para kërkesës tjetër.");
+      return;
+    }
+
+    requestInFlight.current = true;
+    lastRequestTime.current = now;
     setLoading(true);
+    setError("");
     setResult("");
 
     try {
-      const response = await client.responses.create({
-        model: "gpt-4o",
-        instructions: "A është ky email mashtrim? Përgjigju në shqip.",
-        input: text,
+      const response = await client.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "system",
+            content: "A është ky email mashtrim? Përgjigju në shqip.",
+          },
+          {
+            role: "user",
+            content: text,
+          },
+        ],
       });
 
-      setResult(response.output_text);
-    } catch (error) {
-      console.error(error);
-      setResult("Gabim gjatë kontrollimit të emailit.");
+      setResult(response.choices[0].message.content);
+    } catch (err) {
+      console.error(err);
+
+      if (err?.status === 429) {
+        setError(
+          "Kufiri i kërkesave u tejkalua. Ju lutem prisni pak dhe provoni përsëri."
+        );
+      } else {
+        setError("Ndodhi një gabim gjatë analizës së emailit.");
+      }
     }
 
     setLoading(false);
+    requestInFlight.current = false;
+  };
+
+  const noHoverLink = {
+    color: "inherit",
+    textDecoration: "none",
+    cursor: "default",
+    "&:hover": {
+      textDecoration: "none",
+    },
   };
 
   return (
@@ -55,35 +101,26 @@ function Scam() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        padding: 3,
+        p: 3,
       }}
     >
-      <Card
-        sx={{
-          width: "100%",
-          maxWidth: 650,
-          padding: 2,
-          borderRadius: 3,
-          boxShadow: 4,
-        }}
-      >
+      <Card sx={{ maxWidth: 650, width: "100%", borderRadius: 3, boxShadow: 4 }}>
         <CardContent>
           <Typography variant="h5" fontWeight="bold" gutterBottom>
-            A eshte mashtrim ky email?
+            A është mashtrim ky email?
           </Typography>
 
           <TextField
-            label="Vendos emailin këtu"
+            label="Vendos mesazhin e emailit këtu"
             placeholder="Ngjit emailin që dyshon se është mashtrim..."
             value={text}
             onChange={(e) => setText(e.target.value)}
             multiline
             minRows={6}
             fullWidth
-            sx={{ marginBottom: 2 }}
+            sx={{ mb: 2 }}
           />
 
-          {/* Terms & Conditions */}
           <FormControlLabel
             control={
               <Checkbox
@@ -94,37 +131,43 @@ function Scam() {
             label={
               <Typography variant="body2">
                 I agree to the{" "}
-                <Link href="/terms" underline="hover">
-                  Terms & Conditions
+                <Link href="/terms" sx={noHoverLink}>
+                  Terms and Conditions
+                </Link>{" "}
+                and{" "}
+                <Link href="/privacy" sx={noHoverLink}>
+                  Privacy Policy
                 </Link>
               </Typography>
             }
-            sx={{ marginBottom: 2 }}
+            sx={{ mb: 2 }}
           />
 
+          {error && (
+            <Alert severity="warning" sx={{ mb: 2 }}>
+              {error}
+            </Alert>
+          )}
+
           <Button
+            fullWidth
             variant="contained"
             size="large"
-            fullWidth
             onClick={handleSend}
-            disabled={loading || !accepted}   // Disabled until accepted
-            sx={{ paddingY: 1.4, fontSize: "1rem" }}
+            disabled={!accepted || loading}
+            sx={{ py: 1.4 }}
           >
-            {loading ? <CircularProgress size={26} color="inherit" /> : "Kontrollo Emailin"}
+            {loading ? (
+              <CircularProgress size={26} color="inherit" />
+            ) : (
+              "Kontrollo Emailin"
+            )}
           </Button>
 
           {result && (
             <Box mt={3}>
               <Typography variant="h6">Rezultati:</Typography>
-              <Card
-                sx={{
-                  marginTop: 1,
-                  padding: 2,
-                  background: "#fafafa",
-                  borderRadius: 2,
-                  borderLeft: "6px solid #1976d2",
-                }}
-              >
+              <Card sx={{ mt: 1, p: 2, background: "#fafafa" }}>
                 <Typography>{result}</Typography>
               </Card>
             </Box>

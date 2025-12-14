@@ -8,6 +8,7 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import Contact from './pages/Contact/Contact';
 import Scam from './pages/Scam/Scam';
 import Terms from './pages/Scam/Terms';
+import Privacy from './pages/Scam/Privacy';
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/is-this-a-scam' element={<Scam/>}/>
           <Route path='/terms' element={<Terms/>}/>
+          <Route path='/privacy' element={<Privacy/>}/>
           
         </Routes>
         <Footer/>

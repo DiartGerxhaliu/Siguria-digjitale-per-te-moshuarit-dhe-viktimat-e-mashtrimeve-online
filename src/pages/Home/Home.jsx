@@ -58,8 +58,7 @@ export default function Home() {
         width:'100%',
     }}>
 
-      {/* 
-      Qiky osht banneri
+      {/* Qiky osht banneri
       edhe titullin munum me ba mu ndrru nese doni */}
       
       <Banner 
@@ -69,7 +68,7 @@ export default function Home() {
         />
         
         <Box
-        classname="section"
+        className="section"
         sx={{
           height:'50vh',
           display:'flex',
@@ -112,7 +111,7 @@ export default function Home() {
         </Box>
 
         <Box 
-        classname={'cards'}
+        className={'cards'}
         sx={{
           width:'100%',
           display: 'flex',

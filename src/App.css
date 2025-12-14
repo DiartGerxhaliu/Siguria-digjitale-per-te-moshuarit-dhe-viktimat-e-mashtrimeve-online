@@ -2,20 +2,20 @@
   text-align: center;
 }
 
-
-a{
+a {
   color: black;
   text-decoration: none;
   padding: 25px;
-  border-radius: 25%;
+  border-radius: 10px;
+  transition: background-color 0.5s, color 0.5s; 
 }
-a:hover{
-  transition: 1s;
+
+a:hover {
   background-color: rgb(0, 91, 201);
   color: white;
 }
 
-.footer a{
+.footer a {
   color: white;
   text-decoration: none;
 }
